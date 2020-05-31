@@ -1,10 +1,10 @@
 # How To Use 
 
--  first just git clone the repo ```git@github.com:ggican/webcam.git```
+-  first just git clone the repo ```git@github.com:ggican/product-list-ascii.git```
 - run install after clone ```npm install```
-- run start with environment local ```npm run start:local```
 - if you went try test just run ```npm run test```
-
+- if you went try test just run with coverage ```npm run test:cov```
+- if you went run storybook ```npm run storybook```
 for detail like what this aplication you can see below this :
 
 

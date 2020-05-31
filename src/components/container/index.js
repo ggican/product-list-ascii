@@ -8,8 +8,8 @@ const Container = styled.div`
     margin: 0 auto;
     padding: ${props => (props.noPadding ? 0 : "20px 15px 10px 15px")};
     padding-bottom: 110px;
-    width: 450px;
-    @media (max-width: 450px) {
+    width: 1024px;
+    @media (max-width: 1024px) {
         width: 100%;
     }
 `;

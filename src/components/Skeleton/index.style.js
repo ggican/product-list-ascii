@@ -22,7 +22,7 @@ const SkeletonStyle = styled.div`
 `;
 
 SkeletonStyle.defaultProps = {
-    height: 10,
+    height: "10px",
     width: "100%",
     circle: false,
 };
@@ -30,7 +30,7 @@ SkeletonStyle.propTypes = {
     /**
       `height` for height skeleton
       */
-    height: PropTypes.number,
+    height: PropTypes.string,
     /**
       `width` for set up width skeleton
       */

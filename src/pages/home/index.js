@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import Container from "../../components/container";
-import Content from "../../components/content";
+import Container from "../../components/Container";
+import Content from "../../components/Content";
 import InfiniteScroll from "../../components/infinite-scroll";
 import ProductCard from "../../components/ProductCard";
 import Grid from "../../components/Grid";
@@ -67,7 +67,6 @@ const Home = () => {
 
     const handleLoadData = () => {
         if (!isLoading && !isReset) {
-            console.log("masuk sini");
             setTimeout(() => {
                 getProductList(params);
             }, 200);
@@ -94,7 +93,14 @@ const Home = () => {
                         hasMore={isEndData}
                         isReset={isReset}
                         loadingComponent={
-                            <ProductCard.Loading></ProductCard.Loading>
+                            <Grid>
+                                <Grid.Col lg={4} sm={6} xs={12} md={4}>
+                                    <ProductCard.Loading></ProductCard.Loading>
+                                </Grid.Col>
+                                <Grid.Col lg={4} sm={6} xs={12} md={4}>
+                                    <ProductCard.Loading></ProductCard.Loading>
+                                </Grid.Col>
+                            </Grid>
                         }
                         endOfComponent={
                             <div className="end-of-catalogue">
@@ -103,21 +109,16 @@ const Home = () => {
                         }
                     >
                         <Grid>
-                            {items.map(({ id, face, price, size, date }) => {
+                            {items.map((item, key) => {
                                 return (
                                     <Grid.Col
-                                        lg={12}
-                                        sm={12}
+                                        lg={4}
+                                        sm={4}
                                         xs={12}
-                                        md={12}
-                                        key={id}
+                                        md={4}
+                                        key={key}
                                     >
-                                        <ProductCard
-                                            date={date}
-                                            size={size}
-                                            face={face}
-                                            price={price}
-                                        ></ProductCard>
+                                        <ProductCard {...item}></ProductCard>
                                     </Grid.Col>
                                 );
                             })}

@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { Route, Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
+import Layouts from "../layouts";
 
 const conditionRoute = ({ props, result, authUser, rest, Component }) => {
     const { location } = props;
@@ -26,14 +27,14 @@ const conditionRoute = ({ props, result, authUser, rest, Component }) => {
 const RouteConfiguration = ({ component: Component, authUser, ...rest }) => {
     const result = { ...rest };
     return (
-        <div style={result.item.style}>
+        <Layouts style={result.item.style}>
             <Route
                 {...rest}
                 render={props =>
                     conditionRoute({ props, result, authUser, rest, Component })
                 }
             />
-        </div>
+        </Layouts>
     );
 };
 

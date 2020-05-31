@@ -6,10 +6,8 @@ describe("Reducer Services Component", () => {
         user: {
             auth: false,
         },
-        pokemon: {
-            pokemonDetail: false,
-            pokemonList: false,
-            pokemonFilter: false,
+        product: {
+            list: false,
         },
     };
     beforeEach(() => {});
@@ -17,8 +15,8 @@ describe("Reducer Services Component", () => {
     it("SUCCESS servicesRedux Snapshot servicesRedux", () => {
         const actionTest = {
             reducer: "reducer",
-            group: "pokemon",
-            key: "pokemonList",
+            group: "product",
+            key: "list",
             data: ["cool"],
             message: {
                 message: "cool its me",
@@ -36,8 +34,8 @@ describe("Reducer Services Component", () => {
     it("SUCCESS servicesRedux type 200 function servicesRedux", () => {
         const actionTest = {
             reducer: "reducer",
-            group: "pokemon",
-            key: "pokemonList",
+            group: "product",
+            key: "list",
             data: ["cool"],
             message: {
                 message: "cool its me",
@@ -49,10 +47,8 @@ describe("Reducer Services Component", () => {
 
         expect(servicesRedux(state, actionTest)).toEqual({
             ...result,
-            pokemon: {
-                pokemonList: actionTest,
-                pokemonDetail: false,
-                pokemonFilter: false,
+            product: {
+                list: actionTest,
             },
         });
     });
@@ -60,8 +56,8 @@ describe("Reducer Services Component", () => {
     it("SUCCESS servicesRedux type 201 function servicesRedux", () => {
         const actionTest = {
             reducer: "reducer",
-            group: "pokemon",
-            key: "pokemonList",
+            group: "product",
+            key: "list",
             data: ["cool"],
             message: {
                 message: "cool its me",
@@ -72,10 +68,8 @@ describe("Reducer Services Component", () => {
         };
         expect(servicesRedux(state, actionTest)).toEqual({
             ...result,
-            pokemon: {
-                pokemonList: actionTest,
-                pokemonDetail: false,
-                pokemonFilter: false,
+            product: {
+                list: actionTest,
             },
         });
     });
@@ -83,8 +77,8 @@ describe("Reducer Services Component", () => {
     it("SUCCESS servicesRedux type 201 function servicesRedux", () => {
         const actionTest = {
             reducer: "reducer",
-            group: "pokemon",
-            key: "pokemonList",
+            group: "product",
+            key: "list",
             data: ["cool"],
             message: {
                 message: "cool its me",
@@ -95,10 +89,8 @@ describe("Reducer Services Component", () => {
         };
         expect(servicesRedux(state, actionTest)).toEqual({
             ...result,
-            pokemon: {
-                pokemonList: actionTest,
-                pokemonDetail: false,
-                pokemonFilter: false,
+            product: {
+                list: actionTest,
             },
         });
     });
@@ -106,8 +98,8 @@ describe("Reducer Services Component", () => {
     it("SUCCESS servicesRedux type 201 function servicesRedux", () => {
         const actionTest = {
             reducer: "reducer",
-            group: "pokemon",
-            key: "pokemonList",
+            group: "product",
+            key: "list",
             data: ["cool"],
             message: {
                 message: "cool its me",
@@ -118,10 +110,8 @@ describe("Reducer Services Component", () => {
         };
         expect(servicesRedux(state, actionTest)).toEqual({
             ...result,
-            pokemon: {
-                pokemonList: actionTest,
-                pokemonDetail: false,
-                pokemonFilter: false,
+            product: {
+                list: actionTest,
             },
         });
     });
@@ -129,8 +119,8 @@ describe("Reducer Services Component", () => {
     it("SUCCESS servicesRedux type 401 function servicesRedux", () => {
         const actionTest = {
             reducer: "reducer",
-            group: "pokemon",
-            key: "pokemonList",
+            group: "product",
+            key: "list",
             data: ["cool"],
             message: {
                 message: "cool its me",
@@ -141,10 +131,8 @@ describe("Reducer Services Component", () => {
         };
         expect(servicesRedux(state, actionTest)).toEqual({
             ...result,
-            pokemon: {
-                pokemonList: actionTest,
-                pokemonDetail: false,
-                pokemonFilter: false,
+            product: {
+                list: actionTest,
             },
         });
     });
@@ -152,8 +140,8 @@ describe("Reducer Services Component", () => {
     it("SUCCESS servicesRedux type 404 function servicesRedux", () => {
         const actionTest = {
             reducer: "reducer",
-            group: "pokemon",
-            key: "pokemonList",
+            group: "product",
+            key: "list",
             data: ["cool"],
             message: {
                 message: "cool its me",
@@ -164,10 +152,8 @@ describe("Reducer Services Component", () => {
         };
         expect(servicesRedux(state, actionTest)).toEqual({
             ...result,
-            pokemon: {
-                pokemonList: actionTest,
-                pokemonDetail: false,
-                pokemonFilter: false,
+            product: {
+                list: actionTest,
             },
         });
     });
@@ -175,8 +161,8 @@ describe("Reducer Services Component", () => {
     it("SUCCESS servicesRedux type 409 function servicesRedux", () => {
         const actionTest = {
             reducer: "reducer",
-            group: "pokemon",
-            key: "pokemonList",
+            group: "product",
+            key: "list",
             data: ["cool"],
             message: {
                 message: "cool its me",
@@ -187,10 +173,8 @@ describe("Reducer Services Component", () => {
         };
         expect(servicesRedux(state, actionTest)).toEqual({
             ...result,
-            pokemon: {
-                pokemonList: actionTest,
-                pokemonDetail: false,
-                pokemonFilter: false,
+            product: {
+                list: actionTest,
             },
         });
     });
@@ -198,8 +182,8 @@ describe("Reducer Services Component", () => {
     it("SUCCESS servicesRedux type 500 function servicesRedux", () => {
         const actionTest = {
             reducer: "reducer",
-            group: "pokemon",
-            key: "pokemonList",
+            group: "product",
+            key: "list",
             data: ["cool"],
             message: {
                 message: "cool its me",
@@ -210,18 +194,16 @@ describe("Reducer Services Component", () => {
         };
         expect(servicesRedux(state, actionTest)).toEqual({
             ...result,
-            pokemon: {
-                pokemonList: actionTest,
-                pokemonDetail: false,
-                pokemonFilter: false,
+            product: {
+                list: actionTest,
             },
         });
     });
     it("SUCCESS servicesRedux type CLEAR function servicesRedux", () => {
         const actionTest = {
             reducer: "reducer",
-            group: "pokemon",
-            key: "pokemonList",
+            group: "product",
+            key: "list",
             defaultData: {
                 isDefault: true,
             },
@@ -229,12 +211,10 @@ describe("Reducer Services Component", () => {
         };
         expect(servicesRedux(state, actionTest)).toEqual({
             ...result,
-            pokemon: {
-                pokemonList: {
+            product: {
+                list: {
                     isDefault: true,
                 },
-                pokemonDetail: false,
-                pokemonFilter: false,
             },
         });
     });
@@ -244,10 +224,8 @@ describe("Reducer Services Component", () => {
         };
         expect(servicesRedux(state, actionTest)).toEqual({
             ...result,
-            pokemon: {
-                pokemonList: false,
-                pokemonDetail: false,
-                pokemonFilter: false,
+            product: {
+                list: false,
             },
         });
     });

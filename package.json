@@ -1,5 +1,5 @@
 {
-    "name": "poke-api",
+    "name": "product-list",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
@@ -12,7 +12,6 @@
         "env-cmd": "^10.1.0",
         "json-server": "^0.9.6",
         "react": "^16.13.0",
-        "react-datepicker": "^2.13.0",
         "react-dom": "^16.13.0",
         "react-icons": "^3.9.0",
         "react-router-dom": "^5.1.2",

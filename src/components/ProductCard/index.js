@@ -1,32 +1,86 @@
 import React from "react";
+import PropTypes from "prop-types";
+
+import ProductCardLoading from "./index.loading";
 import StyleProductCard from "./index.style";
+
 import convertSenToUsDollar from "../../utils/convertSenToUsDollar";
 import convertDateToTimeSince from "../../utils/convertDateToTimeSince";
-import ProductCardLoading from "./index.loading";
 
 const ProductCard = ({
-    date = "Thu May 28 2020 05:50:51 GMT+0700 (Western Indonesia Time)",
-    face = "( `·´ )",
+    date = "-",
+    face = "-",
     price = 0,
-    size = 0,
+    size = "23",
+    isAds = false,
 }) => {
     return (
         <StyleProductCard size={size}>
             <div className="product__card--top">
-                <div className="product__card--face">{face}</div>
+                {!isAds ? (
+                    <div className="product__card--face">
+                        {face !== "-" && face}
+                    </div>
+                ) : (
+                    <div
+                        className="product__card--face 
+                    product__card--face-ads"
+                    >
+                        <img src={face} alt="" />
+                    </div>
+                )}
             </div>
-            <div className="product__card--bottom">
-                <span className="product__card--date">
-                    {convertDateToTimeSince(date)}
-                </span>
-                <span className="product__card--price">
-                    {convertSenToUsDollar(price)}
-                </span>
-                <span className="product__card--size"> {`Size ${size}`}</span>
-            </div>
+
+            {!isAds ? (
+                <div className="product__card--bottom">
+                    <span className="product__card--date">
+                        {date !== "-" && convertDateToTimeSince(date)}
+                    </span>
+                    <span className="product__card--price">
+                        {convertSenToUsDollar(price)}
+                    </span>
+                    <span className="product__card--size">
+                        {`Size ${size}`}
+                    </span>
+                </div>
+            ) : (
+                <div className="product__card--bottom">
+                    <span className="product__card--date">Adverstiment</span>
+                </div>
+            )}
         </StyleProductCard>
     );
 };
 
 ProductCard.Loading = ProductCardLoading;
+
+ProductCard.defaultProps = {
+    date: "-",
+    face: "-",
+    price: 0,
+    size: "0",
+    isAds: false,
+};
+ProductCard.propTypes = {
+    /**
+      `date` for date product card
+      */
+    date: PropTypes.string,
+    /**
+      `face` for image product card
+      */
+    face: PropTypes.string,
+    /**
+      `isAds` for flag for ads product card
+      */
+    isAds: PropTypes.bool,
+    /**
+      `price` for price product card
+      */
+    price: PropTypes.number,
+    /**
+      `size` for size of product
+      */
+    size: PropTypes.string,
+};
 export default ProductCard;

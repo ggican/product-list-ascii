@@ -34,7 +34,7 @@ const collectResponse = (response, options, status) => {
 
 const serviceApi = async options => {
     let axiosConfig = {
-        baseURL: "http://localhost:3001/api/",
+        baseURL: process.env.REACT_APP_BASE_URL,
         timeout: 10000,
     };
 

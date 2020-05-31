@@ -1,13 +1,14 @@
 import React from "react";
-import Container from "../../components/container";
+import Container from "../../components/Container";
+import { SelectOption } from "../../components/Form";
 
 const Style = {
-    marginTop: 20,
-    paddingBottom: 0,
+    marginTop: 0,
+    paddingBottom: 20,
     marginBottom: 20,
     backgroundColor: "#fff",
     position: "sticky",
-    top: 58,
+    top: 45,
     borderRadius: 4,
     zIndex: 1,
     borderTopRightRadius: 0,
@@ -16,21 +17,28 @@ const Style = {
     boxShadow: "0 4px 12px 0 rgba(0,0,0,0.05)",
 };
 
-const HomePageSort = ({ onGetValueSort = () => {}, value = "" }) => {
+const HomePageSort = ({ onGetValueSort = () => {}, value = "id" }) => {
     return (
         <Container style={Style}>
-            <label htmlFor="sort">Sort By</label>
-            <select
-                onChange={onGetValueSort}
-                defaultValue={value}
-                name="sort"
-                id="sort"
-            >
-                <option value="id">ID</option>
-                <option value="price">Price</option>
-
-                <option value="id">Size</option>
-            </select>
+            <SelectOption
+                label="Sort By"
+                value={value}
+                onGetValue={onGetValueSort}
+                options={[
+                    {
+                        label: "ID",
+                        value: "id",
+                    },
+                    {
+                        label: "Price",
+                        value: "price",
+                    },
+                    {
+                        label: "Size",
+                        value: "size",
+                    },
+                ]}
+            ></SelectOption>
         </Container>
     );
 };

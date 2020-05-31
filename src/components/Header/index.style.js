@@ -54,8 +54,8 @@ export const HeaderContainer = styled.div`
     flex-direction: row;
     justify-content: space-between;
     margin: 0 auto;
-    width: 450px;
-    @media (max-width: 450px) {
+    width: 1024px;
+    @media (max-width: 1024px) {
         width: 100%;
     }
 `;

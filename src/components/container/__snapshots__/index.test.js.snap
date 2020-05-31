@@ -12,11 +12,11 @@ exports[`Container Component renders and create snapshot <Content /> 1`] = `
   flex-direction: column;
   margin: 0 auto;
   padding: 20px 15px 10px 15px;
-  padding-bottom: 110px;
-  width: 450px;
+  padding-bottom: 20px;
+  width: 1024px;
 }
 
-@media (max-width:450px) {
+@media (max-width:1024px) {
   .c0 {
     width: 100%;
   }

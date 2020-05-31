@@ -1,18 +1,11 @@
 import React from "react";
-import {
-    HeaderStyle,
-    HeaderContainer,
-    HeaderBadge,
-    HeaderLogo,
-} from "./index.style";
-// import Button from "../button";
-// import Icons from "../icons";
+import { HeaderStyle, HeaderContainer, HeaderLogo } from "./index.style";
 
-const Header = ({ withBackButton = false }) => {
+const Header = () => {
     return (
         <HeaderStyle>
             <HeaderContainer test-id="header-content">
-                <HeaderLogo to="/">POKEMON</HeaderLogo>
+                <HeaderLogo to="/">Product List</HeaderLogo>
             </HeaderContainer>
         </HeaderStyle>
     );

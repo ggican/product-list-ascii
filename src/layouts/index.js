@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../components/Container";
+import Header from "../components/Header";
 import BodyContent from "../components/BodyContent";
 
 import StyleLayouts from "./index.style";
@@ -10,7 +10,7 @@ const Layouts = ({
     return (
         <StyleLayouts>
             <BodyContent noPadding={!style?.header}>
-                {style?.header && <Header {...style.header}></Header>}
+                <Header {...style.header}></Header>
                 {children}
             </BodyContent>
         </StyleLayouts>

@@ -6,7 +6,7 @@ const ProductCardLoading = () => {
     return (
         <StyleProductCard>
             <div className="product__card--top">
-                <Skeleton height="80%" width="100%"></Skeleton>
+                <Skeleton height="100" width="100%"></Skeleton>
             </div>
             <div className="product__card--bottom">
                 <div className="product__card--date">

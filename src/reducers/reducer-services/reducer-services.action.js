@@ -32,9 +32,48 @@ const fetch = async (dispatch, value) => {
     }
 };
 
+const productService = async (dispatch, value) => {
+    Promise.all(
+        value.map(item => {
+            return service(item);
+        }),
+    ).then(responseAll => {
+        console.log(responseAll);
+        // responseAll.map(result => {
+        //     dispatch({
+        //         headers: result.headers,
+        //         response: result.response,
+        //         status: result.status,
+        //         type: result.type,
+        //         message: result.message && result.message[result.status],
+        //         reducer: result.reducer,
+        //         group: result.group,
+        //         key: result.key,
+        //         params: value.params,
+        //     });
+        // });
+    });
+    // const result = await service(value);
+    // if (result) {
+    //     dispatch({
+    //         reducer: value.reducer,
+    //         group: value.group,
+    //         key: value.key,
+    //         data: result.response,
+    //         message: result.message,
+    //         type: result.type,
+    //         isError: result.error,
+    //         isSuccess: result.success,
+    //     });
+    // }
+};
+
 const servicesAction = dispatch => ({
     reduxFetch: value => {
         fetch(dispatch, value);
+    },
+    productService: value => {
+        productService(dispatch, value);
     },
     reduxClear: value => {
         clearData(dispatch, value);

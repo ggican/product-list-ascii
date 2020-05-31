@@ -2,17 +2,15 @@
 
 exports[`Reducer Services Component SUCCESS servicesRedux Snapshot servicesRedux 1`] = `
 Object {
-  "pokemon": Object {
-    "pokemonDetail": false,
-    "pokemonFilter": false,
-    "pokemonList": Object {
+  "product": Object {
+    "list": Object {
       "data": Array [
         "cool",
       ],
-      "group": "pokemon",
+      "group": "product",
       "isError": false,
       "isSuccess": true,
-      "key": "pokemonList",
+      "key": "list",
       "message": Object {
         "message": "cool its me",
       },
@@ -28,10 +26,8 @@ Object {
 
 exports[`Reducer Services Component SUCCESS servicesState  Snapshot servicesState 1`] = `
 Object {
-  "pokemon": Object {
-    "pokemonDetail": false,
-    "pokemonFilter": false,
-    "pokemonList": false,
+  "product": Object {
+    "list": false,
   },
   "user": Object {
     "auth": false,

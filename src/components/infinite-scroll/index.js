@@ -9,6 +9,7 @@ const InfiniteScroll = props => {
         loadingComponent,
         endOfComponent,
         isLoading,
+        isReset,
         hasMore,
     } = props;
     const ref = useRef();
@@ -20,7 +21,7 @@ const InfiniteScroll = props => {
     );
 
     useEffect(() => {
-        if (isIntersecting && !isLoading && hasMore) {
+        if (isIntersecting && !isLoading && hasMore && !isReset) {
             onLoadData();
             setIntersecting(false);
         }

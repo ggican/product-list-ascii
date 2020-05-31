@@ -5,10 +5,7 @@ const StyleProductCard = styled.div`
     width: 100%;
     flex-direction: column;
     background-color: rgb(255, 255, 255);
-    /* box-shadow: rgba(49, 53, 59, 0.12) 0px 1px 6px 0px; */
     padding: 0px;
-    /* overflow: hidden; */
-    /* margin-bottom: 15px; */
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     height: 100%;

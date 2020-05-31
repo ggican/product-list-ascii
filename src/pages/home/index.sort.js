@@ -1,12 +1,5 @@
 import React from "react";
-// import Filter from "../../components/filter";
 import Container from "../../components/container";
-
-import service from "./index.service";
-
-// //begin global import
-import CommonFetchData from "../../common/fetch-data";
-//end global import
 
 const Style = {
     marginTop: 20,
@@ -23,14 +16,16 @@ const Style = {
     boxShadow: "0 4px 12px 0 rgba(0,0,0,0.05)",
 };
 
-const HomePageFilter = ({
-    onGetValueFilter = () => {},
-    activeValue = false,
-}) => {
+const HomePageSort = ({ onGetValueSort = () => {}, value = "" }) => {
     return (
         <Container style={Style}>
-            <label htmlFor="">Sort By</label>
-            <select name="" id="">
+            <label htmlFor="sort">Sort By</label>
+            <select
+                onChange={onGetValueSort}
+                defaultValue={value}
+                name="sort"
+                id="sort"
+            >
                 <option value="id">ID</option>
                 <option value="price">Price</option>
 
@@ -40,4 +35,4 @@ const HomePageFilter = ({
     );
 };
 
-export default HomePageFilter;
+export default HomePageSort;

@@ -16,10 +16,10 @@ import Sort from "./index.sort";
 const Home = () => {
     const { dispatch, state } = useStore();
     const [items, setItem] = useState([]);
-    const [isFilter, setIsFilter] = useState("");
+    const [isReset, setReset] = useState(false);
     const [isEndData, setEndData] = useState(true);
     const [params, setParams] = useState({
-        _page: 1,
+        _page: 0,
         _limit: 15,
         _sort: "id",
     });
@@ -30,13 +30,16 @@ const Home = () => {
             setEndData(!(items.length + productResult?.length === 500));
             setItem(prevState => [
                 ...prevState,
-                ...(isFilter.length > 0
+                ...(isReset
                     ? productResult?.length > 0 &&
                       productResult?.map(item => {
                           return { ...item.pokemon };
                       })
                     : productResult),
             ]);
+            setTimeout(() => {
+                setReset(false);
+            }, 200);
         };
         if (!mounted.current) {
             mounted.current = true;
@@ -55,33 +58,41 @@ const Home = () => {
     const [isLoading, setLoading] = useState(false);
     const mounted = useRef();
 
-    const getProductList = () => {
+    const getProductList = params => {
         service.productList({ dispatch, params: params });
-        setParams({
-            _page: 1 + params._page,
-            _limit: 15,
-        });
+        params._page = 1 + params._page;
+        setParams(params);
         setLoading(true);
     };
 
     const handleLoadData = () => {
-        if (!isLoading && !isFilter) {
+        if (!isLoading && !isReset) {
+            console.log("masuk sini");
             setTimeout(() => {
-                getProductList();
+                getProductList(params);
             }, 200);
         }
+    };
+
+    const onGetValueSort = e => {
+        params._sort = e.target.value;
+        params._page = 0;
+        setReset(true);
+        getProductList(params);
+        setItem([]);
     };
 
     return (
         <StyleHome>
             <Container noPadding>
-                <Sort></Sort>
+                <Sort onGetValueSort={onGetValueSort}></Sort>
                 <Content>
                     <InfiniteScroll
                         threshold={20}
                         isLoading={isLoading}
                         onLoadData={handleLoadData}
                         hasMore={isEndData}
+                        isReset={isReset}
                         loadingComponent={
                             <ProductCard.Loading></ProductCard.Loading>
                         }

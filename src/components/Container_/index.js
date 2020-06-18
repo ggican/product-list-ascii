@@ -6,7 +6,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    padding: ${props => (props.noPadding ? 0 : "20px 15px 10px 15px")};
+    padding: ${(props) => (props.noPadding ? 0 : "20px 15px 10px 15px")};
     padding-bottom: 20px;
     width: 1024px;
     @media (max-width: 1024px) {
